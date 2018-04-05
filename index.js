@@ -8,7 +8,7 @@ var socketIO = require('socket.io');
 var fileServer = new(nodeStatic.Server)();
 var app = http.createServer(function(req, res) {
   fileServer.serve(req, res);
-}).listen(process.env.PORT || 8080);
+}).listen(8080);
 
 var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {
@@ -46,6 +46,8 @@ io.sockets.on('connection', function(socket) {
       io.sockets.in(room).emit('ready');
     } else { // max two clients
       socket.emit('full', room);
+      socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
+    socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
     }
   });
 
