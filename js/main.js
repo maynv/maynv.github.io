@@ -22,9 +22,9 @@ var sdpConstraints = {
 
 /////////////////////////////////////////////
 //
-//var room = 'foo';
+var room = '10.90.136.27';
 // Could prompt for room name:
- room = prompt('Enter room name:');
+ //room = prompt('Enter room name:');
 
 var socket = io.connect();
 
