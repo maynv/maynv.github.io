@@ -21,10 +21,10 @@ var sdpConstraints = {
 };
 
 /////////////////////////////////////////////
-
-var room = 'foo';
+//
+//var room = 'foo';
 // Could prompt for room name:
-// room = prompt('Enter room name:');
+ room = prompt('Enter room name:');
 
 var socket = io.connect();
 
@@ -255,3 +255,5 @@ function stop() {
   pc.close();
   pc = null;
 }
+
+//client
